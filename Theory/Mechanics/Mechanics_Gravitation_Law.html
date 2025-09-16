@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GRAVITATION</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link
+      rel="shortcut icon"
+      href="../../files/favicon_white.ico"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="shortcut icon"
+      href="../../files/favicon.ico"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="stylesheet" type="text/css" href="../../css/style-theory.css" />
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+    ></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-7VWWT4ZKR6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-7VWWT4ZKR6");
+    </script>
+    <meta
+      name="google-site-verification"
+      content="mz0TRB59UNqdTxhwzmXmGdgVPh8pB4YqjuUr-aWNGIY"
+    />
+  </head>
+  <!-- Here is our page's main content -->
+  <body>
+    <article>
+      <h2 data-i18n="MGL_article_heading">Physics 3D Interactive Simulation</h2>
+      <button onclick="simSite()" data-i18n="MGL_button_label">
+        <span><strong>3D SIMULATION</strong> </span>
+      </button>
+      <span data-i18n="MGL_button_text"
+        >Press the button to visualise Gravitational Law in 3D</span
+      >
+      <div>
+        <div id="part2" class="content">
+          <h2 data-i18n="MGL_part2_heading">
+            Gravitational Force - Calculation
+          </h2>
+        </div>
+        <table>
+          <tr>
+            <td style="text-align: right" data-i18n="MGL_table1_row1">
+              Mass of Sun, M<sub>s</sub> =
+            </td>
+            <td style="width: 105px" data-i18n="MGL_table1_row1_value">
+              1.989 &times; 10<sup>30</sup> kg
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right" data-i18n="MGL_table1_row2">
+              Mass of Earth, M<sub>e</sub> =
+            </td>
+            <td data-i18n="MGL_table1_row2_value">
+              5.972 &times; 10<sup>24</sup> kg
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right" data-i18n="MGL_table1_row3">
+              Mass of Moon, M<sub>m</sub> =
+            </td>
+            <td data-i18n="MGL_table1_row3_value">
+              7.347 &times; 10<sup>22</sup> kg
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td style="text-align: right" data-i18n="MGL_table2_row1">
+              Distance of Moon from Earth, d =
+            </td>
+            <td data-i18n="MGL_table2_row1_value">384,400 km</td>
+          </tr>
+          <tr>
+            <td style="text-align: right" data-i18n="MGL_table2_row2">
+              Distance of Sun from Earth, D =
+            </td>
+            <td data-i18n="MGL_table2_row2_value">149.06 million km</td>
+          </tr>
+          <tr>
+            <td style="text-align: right" data-i18n="MGL_table2_row3">
+              Gravitational Constant, G =
+            </td>
+            <td>
+              6.6743 &times; 10<sup>-11</sup> m<sup>3</sup>kg<sup>-1</sup>s<sup
+                >-2</sup
+              >
+            </td>
+          </tr>
+        </table>
+
+        <p id="message-el" data-i18n="MGL_message">
+          Understanding Kepler's Law
+        </p>
+      </div>
+    </article>
+
+    <!-- And here is our main footer that is used across all the pages of our website -->
+
+    <footer>
+      <p id="footer" data-i18n="content_dev"></p>
+      <!-- <p id="email"></p> -->
+    </footer>
+    <script>
+      function simSite() {
+        window.open(
+          "../../Simulations/Mechanics_Gravitation_Law.html",
+          "_self"
+        );
+      }
+    </script>
+
+    <!-- <script type="module" src="../footer.js"></script> -->
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
+  </body>
+</html>

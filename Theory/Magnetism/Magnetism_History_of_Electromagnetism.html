@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Astronomical Telescope </title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="shortcut icon" href="../../files/favicon_white.ico" media="(prefers-color-scheme: dark)"/>
+		<link rel="shortcut icon" href="../../files/favicon.ico" media="(prefers-color-scheme: light)" />
+		<link rel="stylesheet" type="text/css"  href="../../css/style-theory.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7VWWT4ZKR6"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+	
+		  gtag('config', 'G-7VWWT4ZKR6');
+		</script>
+		<meta name="google-site-verification" content="mz0TRB59UNqdTxhwzmXmGdgVPh8pB4YqjuUr-aWNGIY">
+		
+	</head>
+   
+        <!-- Here is our page's main content -->
+    <body>
+        <article>
+            <div id="part1" onclick="simSite()" class="content"> 
+		        <h2 data-i18n="MHE_part1_heading">Physics 3D Interactive Simulation </h2>
+                <button onclick="simSite()" data-i18n="MHE_part1_button"><span><strong>3D SIMULATION</strong> </span></button>
+                <span data-i18n="MHE_part1_text">Press the button to visualise 'Electromagnetism' in 3D </span>
+            </div>
+            <div id="part2" class="content">
+                <h2 data-i18n="MHE_part2_heading">Physics of Electromagnetism</h2>
+                <p data-i18n="MHE_part2_text1">
+                    In 1820, Hans Christian Oersted, found during a lecture demonstration that when a current is sent through a wire, a nearby magnet is put into motion.
+                    In other words, he found
+                </p>
+                <dl data-i18n="MHE_part2_list1">
+                    <dt>
+                        &#160 &#xa0 &#10148 The flow of electricity can move bodies.
+                    </dt>
+                </dl>
+                <p data-i18n="MHE_part2_text2">
+                    Further experiments with electricity, showed that two wires in which charges flows
+                    attract or repel each other, depending on whether the currents are parallel or antiparallel.
+                    These and other experiments show that
+                </p>
+                <dl data-i18n="MHE_part2_list2">
+                    <dt>
+                        &#160 &#xa0 &#10148 Wires that carry an electric current behave like magnets.
+                    </dt>
+                </dl>
+                <p data-i18n="MHE_part2_text3">
+                    Electricity can be turned into magnetism.
+                    Shortly afterwards, it was found that coils increase these effects dramatically compared to wires.
+                </p>
+                <dl data-i18n="MHE_part2_list3">
+                    <dt>
+                        &#160 &#xa0 &#10148 Coils behave like small magnets.
+                    </dt>
+                </dl>
+            </div> 
+            <div id="part3" class="content">
+                <h2 data-i18n="MHE_part3_heading">Law of Biot and Savart</h2>
+                <p>$$ d\vec{ B } = {{\mu_{0}} \over{4\pi}}  {i\vec{ds} \times \hat r \over{r^{2}}} $$</p>
+                <p data-i18n="MHE_part3_text">Magnetic field due to different current carrying elements are derived from Biot and Savart Law.</p>
+            </div>
+            <div id="part4" class="content">
+                <h2 class="top" data-i18n="MHE_part4_heading">Derived Formulas </h2>
+                <table class="center" style="width:60%;">
+                    <tr>
+                        <td data-i18n="MHE_part4_table_row1_desc">At a distance R from a Long Straight Wire</td>
+                        <td class="left" data-i18n="MHE_part4_table_row1_formula"> $$ B = {{\mu_{0} i} \over{2\pi R}}  $$</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="MHE_part4_table_row2_desc">and a Semi-infinite Straight Wire</td>
+                        <td data-i18n="MHE_part4_table_row2_formula"> $$B = {{\mu_{0}i} \over{4\pi R}} $$</td>
+                    </tr>
+                    <tr>
+                        <td ></td>
+                        <td >-------------------------</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="MHE_part4_table_row4_desc">At center of a curved circular arc with an angle \(\phi\)</td>
+                        <td data-i18n="MHE_part4_table_row4_formula"> $$B = {{\mu_{0}i \phi} \over{4\pi R}} $$</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="MHE_part4_table_row5_desc">and a closed coil (\(\phi = 2\pi\) )</td>
+                        <td data-i18n="MHE_part4_table_row5_formula"> $$B = {{\mu_{0}i} \over{2 R}} $$</td>
+                    </tr>
+                    <tr>
+                        <td ></td>
+                        <td >-------------------------</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="MHE_part4_table_row7_desc">At the center of an ideal solenoid</td>
+                        <td data-i18n="MHE_part4_table_row7_formula"> $$B = {{\mu_{0} in } } $$</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="MHE_part4_table_row8_desc">At the center of a toroid with radius \(r\) </td>
+                        <td data-i18n="MHE_part4_table_row8_formula"> $$B = {{\mu_{0}i N} \over{2 \pi }}{{1}\over{r}} $$</td>
+                    </tr>
+                </table>
+            </div>
+        </article>
+  
+        <!-- And here is our main footer that is used across all the pages of our website -->
+
+        <footer >
+            <p id="footer" data-i18n="content_dev"></p>
+            <!-- <p id="email"></p> -->
+        </footer>
+        <script>
+            function simSite() {
+
+                window.open("../../Simulations/Magnetism_History_of_Electromagnetism.html", "_self")
+            }
+        </script>
+
+        <!-- <script type="module" src="../footer.js"></script>     -->
+        <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+        <script type="module" src="/i18n/index_i18n.js"></script>
+    </body>
+</html>
