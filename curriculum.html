@@ -409,7 +409,7 @@
             "gravitational force",
             "angular momentum",
             "ideal gas equation",
-            "interference",
+            "Interference",
             "Young's double slit",
           ],
           link: "assets/images/grade11.jpeg",
@@ -462,7 +462,9 @@
       }
 
       // Generate grade containers on page load
-      window.onload = generateGradeContainers;
+      window.onload = setTimeout(() => {
+        generateGradeContainers();
+      }, 200);
       let cont = document.getElementById("nav-menu-container");
       let expand = document.getElementById("expandButton");
       let isOpen = false;

@@ -23,31 +23,31 @@
 <body>
 
     <div style="font-weight: normal;  text-decoration-line: none; padding-bottom: 2px;" id="topmenu">
-        <div>ARCHIMEDE'S PRINCIPLE and BUOYANT FORCE</div>
+        <div data-i18n="archimede_principle">ARCHIMEDE'S PRINCIPLE and BUOYANT FORCE</div>
 
     </div>
 
 
 
     <div id="menu">
-        <a> Air Density = 1.204 kg/m<sup>3</sup></a><br>
-        <a> Object Density = 7800 kg/m<sup>3</sup></a><br>
+        <a> <span data-i18n="air_density">Air Density</span> = 1.204 kg/m<sup>3</sup></a><br>
+        <a> <span data-i18n="object_density">Object Density</span> = 7800 kg/m<sup>3</sup></a><br>
         <a><input type="range" id="density" name="density" min="600" max="1600" value="1000" step="50"></a>
-        <a> <label for="density"><strong>Fluid Density </strong></label>
+        <a> <label for="density"><strong data-i18n="fluid_density">Fluid Density </strong></label>
             = </a> <a id="densityValue"></a><a> kg/m<sup>3</sup> </a><br>
 
         <a><input type="range" id="weight" name="weight" min="1" max="18" value="4" step="1">
-            <label for="weight"><strong> Object Mass </strong></label>
+            <label for="weight"><strong data-i18n="object_mass"> Object Mass </strong></label>
         </a> </a>= <a id="weightValue"></a><a> kg</a><br>
         <br>
 
-        <strong>The apparent loss of weight of the object equals to the weight of the fluid displaced by
+        <strong data-i18n="apparent_loss">The apparent loss of weight of the object equals to the weight of the fluid displaced by
             it.</strong><br>
-        <button id="fluid">ADD FLUID</button>
-        <button id="reset">RESET</button><br>
-        <button onClick="pressure()">Pressure</button>
-        <button onClick="pascalLaw()">Pascal's Law</button>
-        <button onClick="torricellisLaw()">Torricellis Law</button>
+        <button id="fluid" data-i18n="add_fluid">ADD FLUID</button>
+        <button id="reset" data-i18n="reset">RESET</button><br>
+        <button onClick="pressure()" data-i18n="pressure">Pressure</button>
+        <button onClick="pascalLaw()" data-i18n="Pascal's Law">Pascal's Law</button>
+        <button onClick="torricellisLaw()" data-i18n="Torricellis Law">Torricellis Law</button>
     </div>
     <script>
 
@@ -469,6 +469,9 @@
             return square;
         }
     </script>
+
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

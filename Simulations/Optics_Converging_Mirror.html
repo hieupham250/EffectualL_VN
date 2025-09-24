@@ -25,28 +25,28 @@
 
     <div id="container">
         <div id="topmenu">
-            <div>Image Formation with Concave Mirror</div>
+            <div data-i18n="image_formation_concave">Image Formation with Concave Mirror</div>
 
         </div>
 
         <div id="sidemenu">
             <a><input type="range" id="focal" name="focal" min="-25" max="-1" value="-7" step="0.5">
-                <label for="focal">Focal Length =</label><a id="focalDisplay"> -7 </a>cm<br>
+                <label for="focal"><span data-i18n="focal_length">Focal Length</span> =</label><a id="focalDisplay"> -7 </a>cm<br>
             </a>
 
             <a><input type="range" id="object" name="object" min="-50" max="-0.5" value="-18" step="0.5">
-                <label for="object">Object Distance =</label><a id="objectDisplay"> -18 </a>cm<br>
+                <label for="object"><span data-i18n="object_distance">Object Distance</span> =</label><a id="objectDisplay"> -18 </a>cm<br>
             </a>
 
 
             <input type="range" id="height" name="height" min="0.5" max="5" value="3" step="0.5">
 
-            <label for="height">Object Height =</label><a id="heightDisplay"> 3 </a> cm<br>
+            <label for="height"><span data-i18n="object_height">Object Height</span> =</label><a id="heightDisplay"> 3 </a> cm<br>
         </div>
 
         <div id="menu">
             <div style="display: none;" id="formula">
-            <a> <strong> Formula: <br>
+            <a> <strong> <span data-i18n="formula">Formula</span>: <br>
             
                 <div class="fraction">
                     <span class="fup">1</span>
@@ -73,7 +73,7 @@
                     <span class="fdn">(u-f)</span>
                 </div></strong></a>
                 <br>
-                <a><strong>Magnification:<br>
+                <a><strong><span data-i18n="magnification">Magnification:</span><br>
                 <div class="fraction">
                     m =
                 </div>
@@ -126,29 +126,29 @@
                     <table>
                         <tr>
                             <td>
-                                Focal length, (f) = <b id="f-el"> </b> cm
+                                <span data-i18n="focal_length">Focal length</span>, (f) = <b id="f-el"> </b> cm
                             </td>
                             <td>&nbsp; &nbsp;</td>
                             <td>
-                                Magnification, (m) =  <b id="m-el"></b>
+                                <span data-i18n="magnification">Magnification</span>, (m) =  <b id="m-el"></b>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Object Distance, (u) = <b id="u-el">  </b> cm
+                                <span data-i18n="object_distance">Object Distance</span>, (u) = <b id="u-el">  </b> cm
                             </td>
                             <td>&nbsp; &nbsp;</td>
                             <td>
-                                Object Height, (h<sub>o</sub>) = <b id="ho-el"> </b> cm
+                                <span data-i18n="object_height">Object Height</span>, (h<sub>o</sub>) = <b id="ho-el"> </b> cm
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Image Distance, (v) = <b style="color:red;" id="v-el">  </b> cm
+                                <span data-i18n="image_distance">Image Distance</span>, (v) = <b style="color:red;" id="v-el">  </b> cm
                             </td>
                             <td>&nbsp; &nbsp;</td>
                             <td>
-                                Image Height, h<sub>i</sub> = <b style="color:red;" id="hi-el">  </b> cm 
+                                <span data-i18n="image_height">Image Height</span>, h<sub>i</sub> = <b style="color:red;" id="hi-el">  </b> cm 
                             </td>
                         </tr>
                     </table>
@@ -158,7 +158,7 @@
         </div>    
             
                 
-                <button onClick=" displayOn()">FORMULA</button>
+                <button onClick=" displayOn()" data-i18n="formula">FORMULA</button>
                 
         </div>
 
@@ -457,7 +457,9 @@
             controls.target.set(0, 2, -2);
 
             document.body.appendChild(renderer.domElement);
-            showLabels();
+            setTimeout(() => {
+                showLabels();
+            }, 200);
             inputChange()
             window.addEventListener('resize', onWindowResize);
         }
@@ -527,10 +529,10 @@
 
         function showLabels() {
             //labels
-            objLabel = addLabels('Object');
-            imgLabel = addLabels('Real Image');
-            virtualLabel = addLabels('Virtual Image');
-            infinityLabel = addLabels('Image at infinity');
+            objLabel = addLabels(i18next.t('Object'));
+            imgLabel = addLabels(i18next.t('Real Image'));
+            virtualLabel = addLabels(i18next.t('Virtual Image'));
+            infinityLabel = addLabels(i18next.t('Image at infinity'));
             object.add( infinityLabel);
             objLabel.position.y = params.ho + 1;
             infinityLabel.position.y = - 1;
@@ -554,12 +556,12 @@
             fPoint.position.z = params.f;
             fPoint.add(fLabel);
 
-            opticalLabel = addLabels('Optical Axis');
+            opticalLabel = addLabels(i18next.t('Optical Axis'));
             opticalLabel.position.z = 45;
             opticalLabel.position.y = -1;
             opticalAxis.add(opticalLabel);
 
-            lensLabel = addLabels('Concave Mirror');
+            lensLabel = addLabels(i18next.t('Concave Mirror'));
             lensLabel.position.y = -params.f + 2;
             scene.add(lensLabel);
         }
@@ -823,6 +825,9 @@
             eye.visible = false;
         }
     </script>
+
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

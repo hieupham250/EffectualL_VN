@@ -25,34 +25,33 @@
    
   <article>
     <div id="part1" class="content"> 
-        <h2>Physics 3D Interactive Simulation </h2>	
-          <button onclick="simSite()"><span><strong>3D SIMULATION</strong> </span></button>
-          Press the button to visualise 'Buoyant Forces' in 3D
+        <h2 data-i18n="TBF_part1_heading">Physics 3D Interactive Simulation </h2>	
+          <button onclick="simSite()" data-i18n="TBF_part1_button"><span><strong>3D SIMULATION</strong> </span></button>
+          <span data-i18n="TBF_part1_text">Press the button to visualise 'Buoyant Forces' in 3D</span>
      
           <div id="part2" class="content">
-          <h2>Ideal Gas</h2>
-          <a ><strong>Buoyant Forces :</strong></a>
-        <a>When a body is wholly or partially immersed in a fluid at rest, the fluid exerts pressure on the surface of the body in contact with the fluid. The pressure is greater on lower surfaces of the body than on the upper surfaces as pressure in a fluid increases with depth. The resultant of all the forces is an upward force called buoyant force.</a>
+          <h2 data-i18n="TBF_part2_heading">Ideal Gas</h2>
+          <a ><strong data-i18n="TBF_part2_text1">Buoyant Forces :</strong></a>
+        <a data-i18n="TBF_part2_text2">When a body is wholly or partially immersed in a fluid at rest, the fluid exerts pressure on the surface of the body in contact with the fluid. The pressure is greater on lower surfaces of the body than on the upper surfaces as pressure in a fluid increases with depth. The resultant of all the forces is an upward force called buoyant force.</a>
           <p>
             <dl>
-                <dt>
-                    &#160 &#xa0 &#10148  The interatomic forces within gases are
-                    very weak.
+                <dt data-i18n="TBF_part2_text3">
+                    &#160 &#xa0 &#10148  The interatomic forces within gases are very weak.
                 </dt>
             </dl>
             <dl>
-                <dt>
+                <dt data-i18n="TBF_part2_text4">
                     &#160 &#xa0 &#10148 For a gas, the volume is entirely determined by the container holding the gas. Thus, equations involving gases will contain the volume V as a variable, rather than focusing on a change in the volume from an initial value.
                     
                 </dt>
             </dl>
             <dl>
-                <dt>
+                <dt data-i18n="TBF_part2_text5">
                     &#160 &#xa0 &#10148 For a gas, it is useful to know how the quantities volume V, pressure P, and temperature T are related for a sample of gas of mass m. In general, the equation that interrelates these quantities, called the equation of state, is very complicated. However, if the gas is maintained at a very low pressure (or low density), the equation of state is quite simple and can be found experimentally. Such a low-density gas is commonly referred to as an ideal gas.
                 </dt>
             </dl>
             <dl>
-                <dt>
+                <dt data-i18n="TBF_part2_text6">
                     &#160 &#xa0 &#10148 It is convenient to express the amount of gas in a given volume in terms of the number of moles, <strong>n</strong>. One mole of any substance is that amount of the substance that contains <strong>Avogadro's number (N<sub>A</sub>) = 6.022 x 10<sup>23</sup></strong>  of constituent particles (atoms or
                     molecules). The number of moles <strong>n</strong> of a substance is related to its mass <strong>m</strong> through the
                     expression <strong>n = m/M</strong>, where M is the molar mass of the substance. 
@@ -60,23 +59,23 @@
             </dl>
               <dl>
                   <dt>
-                      &#160 &#xa0 &#10148 An ideal gas is confined to a leak proof container whose volume can be varied, so the mass (or the number of moles) of the gas remains constant.
-                      For such a system, experiments provide the following information.
-                      <ul>
+                      <span data-i18n="TBF_part2_text7">&#160 &#xa0 &#10148 An ideal gas is confined to a leak proof container whose volume can be varied, so the mass (or the number of moles) of the gas remains constant.
+                      For such a system, experiments provide the following information.</span>
+                      <ul data-i18n="TBF_part2_text8">
                         <li>Boyle's law : When the gas is kept at a constant temperature, its pressure is inversely proportional to its volume</li>
                         <li>Charles law : When the pressure of the gas is kept constant, its volume is directly proportional to its temperature</li>
                         <li>Ideal gas law : The equation of state for an ideal gas, are summarized from these observations</li>
                     </ul>
                     <strong>PV = nRT = k<sub>B</sub>NT</strong><br> 
-                    where, R is a constant and n is the number of moles of gas in the sample. 
+                    <span data-i18n="TBF_part2_text9">where, R is a constant and n is the number of moles of gas in the sample. 
                     or, N is the number of particles contained in the gas and k<sub>B</sub> is the
-                    Boltzmann constant, one of the fundamental constants of nature, is given by k<sub>B</sub> = 1.380 x 10<sup>-23</sup> J/K.
+                    Boltzmann constant, one of the fundamental constants of nature, is given by k<sub>B</sub> = 1.380 x 10<sup>-23</sup> J/K.</span>
                   </dt>
               </dl>
               <dl>
                 <dt>
-                    &#160 &#xa0 &#10148  <strong> Ideal gas relation</strong>
-                    <ul>
+                    <span data-i18n="TBF_part2_text10">&#160 &#xa0 &#10148  <strong> Ideal gas relation</strong></span>
+                    <ul data-i18n="TBF_part2_text11">
                         <li>The ideal gas relation states that hotter gases, at given pressure, need more volume.</li>
                         <li>The relation thus explains why winds and storms exist, why hot air balloons rise</li>
                         <li>why car engines work</li>
@@ -90,8 +89,8 @@
 <!-- And here is our main footer that is used across all the pages of our website -->
 
 <footer >
-  <p id="footer"></p>
-<p id="email"></p>
+  <p id="footer" data-i18n="footer_copyright"></p>
+<!-- <p id="email"></p> -->
 </footer>
 <script>
      function simSite() {
@@ -100,4 +99,7 @@
     }
   </script>
 
-<script type="module" src="../footer.js"></script>    
+<script type="module" src="../footer.js"></script>  
+
+<script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>

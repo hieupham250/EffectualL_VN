@@ -31,7 +31,7 @@
 <body>
 
 	<div id="topmenu">
-		<div>
+		<div data-i18n="electric_field_title">
 			Electric Field Lines for Point Charge
 		</div>
 
@@ -44,7 +44,7 @@
 			<span class="bar">/</span>
 			<span class="fdn">r<sup>2</sup></span>
 		</div><br>
-		Electric Field Lines for <br>
+		<span data-i18n="electric_field_lines">Electric Field Lines for</span> <br>
 		<a>
 
 			<select id="arr"></select>
@@ -64,10 +64,11 @@
 				<span class="fup"><b>F</b></span>
 				<span class="bar">/</span>
 				<span class="fdn">q</span>
-			</div><br>The electric field, <b>E</b> represents only the charge creating it and is defined to be the ratio of the Coulomb force, <b>F</b> to the test charge, q. It is unique at every point in space. 
+			</div>
+			<div data-i18n="electric_field_text">The electric field, <b>E</b> represents only the charge creating it and is defined to be the ratio of the Coulomb force, <b>F</b> to the test charge, q. It is unique at every point in space. </div>
 			
 		   <br>
-		<button id="Qchange">FOR A NEGATIVE CHARGE</button>
+		<button id="Qchange" data-i18n="negative_charge">FOR A NEGATIVE CHARGE</button>
 
 	</div>
 	<script>
@@ -104,7 +105,14 @@
 
 		let select = document.getElementById("arr");
 		let elmts = ["2", "3", "4"];
-		let charges = { "1": "a negative point charges", "2": "a positive point charges", "3": "+Q and -Q point charges", "4": "two negative point charges", "5": "two positive point charges", "6": "+2Q and -Q point charges" };
+		let charges = { 
+			"1": "charge_negative", 
+			"2": "charge_positive", 
+			"3": "charge_plus_minus", 
+			"4": "charge_two_negative", 
+			"5": "charge_two_positive", 
+			"6": "charge_plus2_minus" 
+		};
 
 		const K = 9 //Coulomb's constant x1e9 in Nm^2/C^2
 
@@ -137,14 +145,16 @@
 			createLights();
 
 			pointer = new THREE.Vector2();
-			for (const key in charges) {
+			setTimeout(()=> {
+				for (const key in charges) {
 				// for (let i = 0; i < elmts.length; i++) {
 				let optn = charges[key];
 				let el = document.createElement("option");
-				el.textContent = optn;
+				el.textContent = i18next.t(charges[key]);
 				el.value = optn;
 				select.appendChild(el);
 			}
+			},200)
 			pointCharge()
 			// guiControls();
 			buttonLoad();
@@ -312,15 +322,15 @@
 				console.log(select.value)
 				if (select.value == charges["1"]) {
 					sign = -1;
-					buttonQchange.innerHTML = 'FOR A NEGATIVE CHARGE'
+					buttonQchange.innerHTML = i18next.t("negative_charge")
 					recreateScene()
 				} else if (select.value == charges["2"]) {
 					sign = 1;
-					buttonQchange.innerHTML = 'FOR A POSITIVE CHARGE'
+					buttonQchange.innerHTML = i18next.t("positive_charge")
 					recreateScene()
 				} else if (select.value == charges["3"]) {
 
-					buttonQchange.innerHTML = 'FOR TWO CHARGES'
+					buttonQchange.innerHTML = i18next.t("two_charges")
 					// twochargeScene()	
 					twopointCharge()
 				}
@@ -329,10 +339,10 @@
 			buttonQchange.addEventListener('click', function () {
 				sign = -1 * sign;
 				if (sign > 0) {
-					buttonQchange.innerHTML = 'FOR A POSITIVE CHARGE'
+					buttonQchange.innerHTML = i18next.t("positive_charge")
 					select.value = charges["2"]
 				} else {
-					buttonQchange.innerHTML = 'FOR A NEGATIVE CHARGE'
+					buttonQchange.innerHTML =i18next.t("negative_charge")
 					select.value = charges["1"]
 				}
 				recreateScene()
@@ -644,6 +654,8 @@
 
 	</script>
 
+ 	<script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

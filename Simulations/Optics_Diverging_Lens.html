@@ -23,14 +23,14 @@
 <body>
 
 	<div id="container">
-		<div id="topmenu">
+		<div id="topmenu" data-i18n="image_formation_diverging">
 			
 				Image Formation with Diverging Lens
 
 		</div>
 
 		<div style="display: none;" id="sidemenu">
-            <a> Lens Formula: </a><br>           
+            <a data-i18n="lens_formula"> Lens Formula: </a><br>           
                     <div class="fraction">
                         <span class="fup">1</span>
                         <span class="bar">/</span>
@@ -49,7 +49,7 @@
                         <span class="fdn">u</span>
                     </div>
             <br>
-            &nbsp; &nbsp; &nbsp; &nbsp; or 
+            &nbsp; &nbsp; &nbsp; &nbsp; <span data-i18n="or">or </span>
             <br>
                 <div class="fraction">
                     <span class="fup">1</span>
@@ -69,7 +69,7 @@
                     <span class="fdn">u</span>
                 </div>
                 <br>
-                magnification:
+                <span data-i18n="magnification">magnification:</span>
                 <br> 
                 <div class="fraction">
                     m =
@@ -85,9 +85,9 @@
 
 		<div>
 
-			<a id="message-el"> Focal length, (f) = <b id="fmessage-el">-10 </b> cm <br>
-				Object Distance, (u) = <b id="umessage-el"> -15 </b> cm<br>
-				Image Distance, (v) = <b style="color:red;" id="vmessage-el"> -6 </b> cm <br>
+			<a id="message-el"> <span data-i18n="focal_length">Focal length</span>, (f) = <b id="fmessage-el">-10 </b> cm <br>
+				<span data-i18n="object_distance">Object Distance</span>, (u) = <b id="umessage-el"> -15 </b> cm<br>
+				<span data-i18n="image_distance">Image Distance</span>, (v) = <b style="color:red;" id="vmessage-el"> -6 </b> cm <br>
 			</a>
 			
 			<a>
@@ -120,8 +120,8 @@
 				<a> &nbsp; =</a>
 				<a id="m-el">0.4</a>
 				<br>
-                <button onClick="displayOn()">FORMULA</button> 
-                <button id="theorybutton" onClick="theorySite()">THEORY</button>
+                <button onClick="displayOn()" data-i18n="formula">FORMULA</button> 
+                <button id="theorybutton" onClick="theorySite()" data-i18n="theory">THEORY</button>
                 <br>
 		</div>
 	</div>
@@ -463,8 +463,8 @@
 
 		function showLabels() {
 			//labels
-			objLabel = addLabels('Object');
-			imgLabel = addLabels('Virtual Image');
+			objLabel = addLabels(i18next.t('Object'));
+			imgLabel = addLabels(i18next.t('Virtual Image'));
 			objLabel.position.y = params.h + params.h / 2;
 			imgLabel.position.y = params.h - 4*heightV;
 			object.add(objLabel);
@@ -492,12 +492,12 @@
 			f2Point.position.z = -params.f;
 			f2Point.add(f2Label);
 
-			opticalLabel = addLabels('Optical Axis');
+			opticalLabel = addLabels(i18next.t('Optical Axis'));
 			opticalLabel.position.z = 18;
 			opticalLabel.position.y = -2;
 			opticalAxis.add(opticalLabel);
 
-			lensLabel = addLabels('Concave Lens');
+			lensLabel = addLabels(i18next.t('Concave Lens'));
 			lensLabel.position.y = 8;
 			scene.add(lensLabel);
 		}
@@ -523,9 +523,13 @@
 			controls.dampingFactor = 0.05;
 			controls.rotateSpeed = 0.1;
 			animate();
-			guiControls();
+			 setTimeout(() => {
+                guiControls();
+            }, 200);
+            setTimeout(() => {
+                showLabels();
+            }, 200);
 			createModel();
-			showLabels();
 			eyeShow();
 			// scene.add(new THREE.AmbientLight(0xffffff));  
 		}
@@ -650,6 +654,9 @@
 			scene.add(eye);
 		}
 	</script>
+
+	<script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

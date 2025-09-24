@@ -40,7 +40,7 @@
 
     <div id="container">
         <div id="topmenu">
-            <div>
+            <div data-i18n="Laws of Refraction">
                 Laws of Refraction</div>
 
         </div>
@@ -65,21 +65,21 @@
 
         <div id="menu">
             <a><input type="range" id="incident" name="incident" min="0" max="90" value="45" step=".5"><br>
-                <label for="incident">Angle of Incidence, <em>i</em> =</label><input type="data" id="incidentDisplay"
+                <label for="incident"><span data-i18n="angle_of_incidence">Angle of Incidence</span>, <em>i</em> =</label><input type="data" id="incidentDisplay"
                     size="3"> <a><sup>o</sup></a>
             </a>
             <br>
             <a><input type="range" id="index" name="index" min="1" max="3.2" value="1.414" step=".001"><br>
-                <label for="index"> Refractive Index, <em>n</em> =</label><input type="data" id="indexDisplay"
+                <label for="index"> <span data-i18n="refractive_index">Refractive Index</span>, <em>n</em> =</label><input type="data" id="indexDisplay"
                     size="3"><br>
             </a><br>
-            <a><label for="refract">Angle of Refraction, <em>r</em> =</label>
+            <a><label for="refract"><span data-i18n="angle_of_efraction">Angle of Refraction</span>, <em>r</em> =</label>
                 <input type="data" id="refract" name="refract" min="0" max="90" size="3"> </a><sup>o</sup><br>
             </a><br>
 
-            <button onClick="displayApparent()">Apparent Depth</button>
-            <button onClick="displayTotal()">Total Internal Reflection</button>
-            <button id="theorybutton" onClick="theorySite()">THEORY</button>
+            <button onClick="displayApparent()" data-i18n="apparent_depth">Apparent Depth</button>
+            <button onClick="displayTotal()" data-i18n="total_internal_reflection">Total Internal Reflection</button>
+            <button id="theorybutton" onClick="theorySite()" data-i18n="theory">THEORY</button>
         </div>
 
     </div>
@@ -358,7 +358,9 @@
             controls.enableZoom = true;
             controls.target.set(0, 2, -2);
 
-            showLabels();
+             setTimeout(() => {
+                showLabels();
+            }, 200);
 
             incident.addEventListener('change', function (e) {
 
@@ -463,15 +465,15 @@
 
         function showLabels() {
             //labels
-            irayLabel = addLabels('Incident Ray');
-            erayLabel = addLabels('Emergent Ray');
-            rrayLabel = addLabels('Refracted Ray');
+            irayLabel = addLabels(i18next.t('Incident Ray'));
+            erayLabel = addLabels(i18next.t('Emergent Ray'));
+            rrayLabel = addLabels(i18next.t('Refracted Ray'));
 
-            normal1Label = addLabels('Normal');
-            normal2Label = addLabels('Normal');
+            normal1Label = addLabels(i18next.t('Normal'));
+            normal2Label = addLabels(i18next.t('Normal'));
 
-            let medium1Label = addLabels('Rarer Medium (Air)');
-            let medium2Label = addLabels('Denser Medium (n)');
+            let medium1Label = addLabels(i18next.t('Rarer Medium (Air)'));
+            let medium2Label = addLabels(i18next.t('Denser Medium (n)'));
 
             irayLabel.position.copy(new THREE.Vector3(0, 8, 0));
             incidentRay.add(irayLabel);
@@ -568,6 +570,9 @@
         }
 
     </script>
+
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

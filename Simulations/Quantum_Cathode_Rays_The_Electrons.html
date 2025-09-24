@@ -23,14 +23,14 @@
 </head>
 
 <body>
-    <div style="color: beige;" id="topmenu">Cathode Rays-The Electron</div>
+    <div style="color: beige;" id="topmenu" data-i18n="Cathode Rays The Electrons">Cathode Rays-The Electron</div>
     <div id="sidemenu"> </div>
 
 
     <div id="menu" style="width: 100%;">
-        <button id="switch" style="background-color: red;">OFF</button>
-        <button id="volt">High Voltage &#9889</button>
-        <button id="polarity"> Change Polarity</button>
+        <button id="switch" style="background-color: red;" data-i18n="off">OFF</button>
+        <button id="volt"><span data-i18n="high_voltage">High Voltage</span> &#9889</button>
+        <button id="polarity" data-i18n="change_polarity"> Change Polarity</button>
     </div>
 
 
@@ -144,7 +144,7 @@
             //labels
             let tubeGeometry = new THREE.CylinderGeometry(.8, .8, 1, 16);
             let elnMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
-            let electronLabel = makeText(-24, -1.5, 1.9, 32, elnMaterial, 'ELECTRON GUN', "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
+            let electronLabel = makeText(-24, -1.5, 1.9, 32, elnMaterial, i18next.t("electron_gun"), "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
             electronButton = new THREE.Mesh(tubeGeometry, redMaterial);
             voltButton = electronButton.clone()
 
@@ -169,7 +169,7 @@
             objects.push(electronButton, gunLabel)
 
             let powerMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
-            let powerabel = makeText(-10, -12, 7, 32, powerMaterial, 'HIGH VOLTAGE SUPPLY ', "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
+            let powerabel = makeText(-10, -12, 7, 32, powerMaterial, i18next.t("high_voltage_supply"), "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
 
             let pulseGeometry = new THREE.PlaneGeometry(2, 2.5);
             pulseLabel = new THREE.Mesh(pulseGeometry, new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, map: voltTexture, transparent: true }));
@@ -178,7 +178,7 @@
             pulseLabel.visible = false
 
             let voltMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
-            let plateLabel = makeText(-5, 7, 2, 32, voltMaterial, 'VOLTAGE PLATES', "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
+            let plateLabel = makeText(-5, 7, 2, 32, voltMaterial, i18next.t("voltage_plates"), "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
             topMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
             let posLabel = makeText(-1, 6, 0, 92, topMaterial, '   ', "rgba(0, 0, 0, 0)", "rgba(0, 255, 255, 1)");
             bottomMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
@@ -293,7 +293,7 @@
         function gunAction() {
             if (power) {
                 buttonSwitch.style.backgroundColor = "green"
-                buttonSwitch.innerHTML = "ON"
+                buttonSwitch.innerHTML = i18next.t("on")
                 gunLabel.material.map = onTexture
                 electronButton.position.set(1.1, 0, 0)
                 electronButton.material = greenMaterial
@@ -303,7 +303,7 @@
                 LINES.visible = true;
             } else if (!power) {
                 buttonSwitch.style.backgroundColor = "red"
-                buttonSwitch.innerHTML = "OFF"
+                buttonSwitch.innerHTML = i18next.t("off")
                 gunLabel.material.map = offTexture
                 electronButton.position.set(-1.1, 0, 0)
                 electronButton.material = redMaterial
@@ -618,7 +618,8 @@
         }
 
     </script>
-
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

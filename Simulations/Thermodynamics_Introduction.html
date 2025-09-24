@@ -22,21 +22,21 @@
 
 <body>
 	<div id="container">
-		<div id="topmenu">How deep can the scuba diver go safely!
+		<div id="topmenu" data-i18n="how_deep">How deep can the scuba diver go safely!
 		</div>
 	</div>
 	<div id="sidemenu">
-		<a> <label for="depth"><strong>Depth = </strong></label><input id="depth" value="25" size="4"> m <br>
-			<label for="pressure"><strong>Pressure</strong>, P = h &rho; g + P<sub>o</sub></label><br> &#160 &#xa0 =
+		<a> <label for="depth"><strong><span data-i18n="depth">Depth</span> = </strong></label><input id="depth" value="25" size="4"> m <br>
+			<label for="pressure"><strong data-i18n="pressure">Pressure</strong>, P = h &rho; g + P<sub>o</sub></label><br> &#160 &#xa0 =
 			<input id="pPascal" size="4"> MPa <br> &#160 &#xa0 = <input id="pAtm" size="4"> atm <br> &#160 &#xa0 =
 			<input id="pPSI" size="4"> PSI<br></a>
 	</div>
 	<div id="menu">
 		<a style="font-weight:bolder; color:wheat; background: black;" id="name-el"></a><a
 			style="font-weight:bold; color:wheat; background: black;" id="message-el"></a><br>
-		<button id="stop">FREEZE</button>
-		<button id="pressure" onClick="interactivePressure()">PRESSURE</button>
-		<button id="interactiveThermo" onClick="interactiveThermo()">IDEAL GAS</button>
+		<button id="stop" data-i18n="freeze">FREEZE</button>
+		<button id="pressure" onClick="interactivePressure()" data-i18n="pressure">PRESSURE</button>
+		<button id="interactiveThermo" onClick="interactiveThermo()" data-i18n="ideal_gas">IDEAL GAS</button>
 
 	</div>
 	<script>
@@ -183,8 +183,12 @@
 						let a = obj[i];
 						let X = model.getObjectByName(a)
 						meshObjects.push(X)
-						let label = makeTextSprite(LABELS[a][0],
-							{ fontsize: 22, fontface: "Georgia", borderColor: { r: 0, g: 0, b: 255, a: 1.0 } });
+						// let label = makeTextSprite(LABELS[a][0],
+						// 	{ fontsize: 22, fontface: "Georgia", borderColor: { r: 0, g: 0, b: 255, a: 1.0 } });
+						let label = makeTextSprite(
+							i18next.t(`${a}.title`),
+							{ fontsize: 22, fontface: "Georgia", borderColor: { r: 0, g: 0, b: 255, a: 1.0 } }
+						);
 						X.add(label)
 						labels.push(label)
 						label.visible = false;
@@ -217,7 +221,7 @@
 				diver_rotateL.stop()
 				diver_rotateR.stop()
 				action.paused = true;
-				buttonStop.innerHTML = 'UNFREEZE';
+				buttonStop.innerHTML = i18next.t("unfreeze");
 				camera.position.set(0, 50, 100);
 				controls.target.set(0, 25, 0);
 				for (let i = 0; i < labels.length; i++) {
@@ -225,7 +229,7 @@
 				}
 			} else {
 				action.paused = false;
-				buttonStop.innerHTML = 'FREEZE';
+				buttonStop.innerHTML = i18next.t("freeze");
 				camera.position.set(10, 20, 400);
 				controls.target.set(0, 7, 0);
 				diverChain()
@@ -266,8 +270,10 @@
 				let a = INTERSECTED.parent.name
 				// console.log(INTERSECTED.parent.name)
 				if (a in LABELS) {
-					nameEl.innerHTML = LABELS[a][0] + " : "
-					messageEl.innerHTML = LABELS[a][1]
+					// nameEl.innerHTML = LABELS[a][0] + " : "
+					// messageEl.innerHTML = LABELS[a][1]
+					nameEl.innerHTML = i18next.t(`${a}.title`) + " : ";
+					messageEl.innerHTML = i18next.t(`${a}.description`);
 				}
 
 			}
@@ -420,6 +426,8 @@
 
 
 	</script>
+	<script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

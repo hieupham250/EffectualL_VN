@@ -10,7 +10,6 @@ body {
   overflow: hidden;
 }
 
-
 #drawing-canvas {
   position: absolute;
   background-color: #000000;
@@ -84,12 +83,10 @@ button {
 }
 
 button:hover {
-
   background-color: rgba(243, 44, 87, 0.75);
 }
 
 button:active {
-
   background-color: rgba(131, 10, 36, 0.75);
 }
 
@@ -102,7 +99,7 @@ button:active {
   padding: 1em;
   color: #fff;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: .5em;
+  border-radius: 0.5em;
   font-size: 12px;
   line-height: 1.2;
 }
@@ -119,7 +116,6 @@ select {
   margin-top: 10px;
   outline: 0;
   background: rgb(3, 108, 156);
-  ;
   color: #fff;
   border: 1px solid rgba(131, 10, 36, 0.75);
   padding: 4px;
@@ -127,7 +123,7 @@ select {
 }
 
 input {
-  border: 2px solid #049EF4;
+  border: 2px solid #049ef4;
   border-radius: 8px;
   text-align: center;
 }
@@ -146,11 +142,9 @@ input {
   left: 0;
   /* make our position the top left of the container */
   top: 0;
-
 }
 
 .label {
-
   margin-left: 25px;
   font-size: 20px;
 }
@@ -174,7 +168,7 @@ caption {
   font-size: 1em;
 }
 
-.fraction>span {
+.fraction > span {
   display: block;
   padding-top: 0.15em;
 }
@@ -209,13 +203,12 @@ caption {
   width: 250px;
   color: #fff;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: .5em;
+  border-radius: 0.5em;
   font-size: 12px;
   line-height: 1.2;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   overflow-y: auto;
 }
-
 
 #number {
   position: absolute;
@@ -225,16 +218,14 @@ caption {
 .labelparts {
   text-align: center;
   font-size: 14px;
-  padding: .1em;
+  padding: 0.1em;
   border-radius: 5px;
   color: #fff;
   font-family: sans-serif;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
-
-@media only screen and (max-width:800px) {
-
+@media only screen and (max-width: 800px) {
   #topmenu {
     font-size: 10px;
     float: right;
@@ -275,12 +266,10 @@ caption {
   }
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width: 500px) {
   #topmenu {
     font-size: 10px;
   }
-
-
 
   .annotation {
     display: none;

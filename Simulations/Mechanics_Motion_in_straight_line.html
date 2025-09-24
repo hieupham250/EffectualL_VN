@@ -22,24 +22,24 @@
 
 <body>
 
-    <div id="topmenu">
+    <div id="topmenu" data-i18n="Motion in a straight line">
         MOTION IN A STRAIGHT LINE
     </div>
     <div id="menu">
-        <label for="Motion-equation">Equation of Motion,</label>
+        <label for="Motion-equation" data-i18n="Motion_equation">Equation of Motion,</label>
         <a><strong><em> = </em></strong></a> <a id="const"><strong>8.5 +</strong></a>
         <a style="visibility:hidden;" id="linearFactor"><strong>2</strong><strong><em>t</em></strong></a>
         <a style="visibility: hidden;" id="quadFactor"> <strong>+ 2.5</strong><em>t<sup>2</sup></em></strong></a>
         <a style="visibility: hidden;" id="cubicFactor"> <strong>+ 4</strong><em>t<sup>3</sup></em></strong></a>
         <br>
         <select id="eqnName" name="eqnName">
-            <option value="Linear">Linear</option>
-            <option value="Quadratic">Quadratic</option>
-            <option value="Cubic">Cubic</option>
+            <option value="Linear" data-i18n="Linear">Linear</option>
+            <option value="Quadratic" data-i18n="Quadratic">Quadratic</option>
+            <option value="Cubic" data-i18n="Cubic">Cubic</option>
         </select>
         <!-- <input type="submit" id="motionEqn"> -->
-        <button id="start">START</button>
-        <button id="reset">RESET</button>
+        <button id="start" data-i18n="start">START</button>
+        <button id="reset" data-i18n="reset">RESET</button>
     </div>
     <canvas id="drawing-canvas" height="300" width="300"></canvas>
 
@@ -593,6 +593,8 @@
         }
     </script>
 
+   <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

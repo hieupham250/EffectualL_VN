@@ -26,7 +26,7 @@
 
     <div id="container">
         <div id="topmenu">
-            <div>Apparent Depth</div>
+            <div data-i18n="apparent_depth">Apparent Depth</div>
 
         </div>
 
@@ -34,17 +34,17 @@
 
         <div id="menu">
             <a><input type="range" id="incident" name="incident" min="0" max="70" value="60" step=".5"><br>
-                <label for="incident">Angle of Incidence, <em>i</em> = </label><a id="incidentDisplay"> <a><sup>o</sup></a>
+                <label for="incident"><span data-i18n="angle_of_incidence">Angle of Incidence</span>, <em>i</em> = </label><a id="incidentDisplay"> <a><sup>o</sup></a>
             </a>
             <br>
-            <a>Refractive Index of water, <em>n<sub>w</sub></em> = 1.333
+            <a><span data-i18n="refractive_index_water">Refractive Index of water</span>, <em>n<sub>w</sub></em> = 1.333
                
             </a><br>
-            <a>Angle of Refraction, <em>r</em> = <a id="refractDisplay"></a> <sup>o</sup>
+            <a><span data-i18n="angle_of_efraction">Angle of Refraction</span>, <em>r</em> = <a id="refractDisplay"></a> <sup>o</sup>
             </a><br>
 
-            <button id="apparent">Show Apparent Depth</button>
-            <button id="theorybutton" onClick="theorySite()">Laws of Refraction</button>
+            <button id="apparent" data-i18n="show_apparent_depth">Show Apparent Depth</button>
+            <button id="theorybutton" onClick="theorySite()" data-i18n="Laws of Refraction">Laws of Refraction</button>
         </div>
 
     </div>
@@ -380,15 +380,15 @@
 
         function showLabels() {
             //labels
-            irayLabel = addLabels('Incident Ray');
-            rrayLabel = addLabels('Refracted Ray');
+            irayLabel = addLabels('Tia tới');
+            rrayLabel = addLabels('Tia khúc xạ');
 
-            normal1Label = addLabels('Normal');
+            normal1Label = addLabels('Pháp tuyến');
 
-            realLabel = addLabels('Real Depth');
+            realLabel = addLabels('Độ sâu thực');
 
-            let medium1Label = addLabels('Air');
-            let medium2Label = addLabels('Water');
+            let medium1Label = addLabels('Không khí');
+            let medium2Label = addLabels('Nước');
 
             irayLabel.position.copy(new THREE.Vector3(0, 6.5, 0));
             incidentRay.add(irayLabel);
@@ -482,6 +482,9 @@
             return eye
         }
     </script>
+
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

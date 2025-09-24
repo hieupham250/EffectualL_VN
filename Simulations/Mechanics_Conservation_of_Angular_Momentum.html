@@ -24,17 +24,17 @@
 
 	<div id="container">
 		<div id="topmenu">
-			<div> MOTION IN A CIRCULAR PATH </div>
+			<div data-i18n="motion_tile"> MOTION IN A CIRCULAR PATH </div>
 		</div>
 
 		<div id="sidemenu">
 
 		</div>
 		<div id="menu">
-			<p id="message-el"><strong>Representation of conservation of angular momentum for a body
-
-			</strong>(decrease in radius of rotation results in increase of speed)</p> <br>
-			<a><label for="radius">CHANGE RADIUS, A = </label><a id="radiusDisplay"> 50 </a> units</a><br>
+			<p id="message-el">
+				<strong data-i18n="Representation_text">Representation of conservation of angular momentum for a body</strong>
+				<span data-i18n="decrease_text">(decrease in radius of rotation results in increase of speed)</span></p> <br>
+			<a><label for="radius"><span data-i18n="change_radius">CHANGE RADIUS</span>, A = </label><a id="radiusDisplay"> 50 </a> <span data-i18n="units">units</span></a><br>
 			<input type="range" id="radius" name="radius" min="10" max="50" value="50" step="5">
 			
 	</div>
@@ -485,4 +485,7 @@ scene.add( axesHelper );
 			return label
 		}
 	</script>
+
+	 <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>

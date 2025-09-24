@@ -24,16 +24,19 @@
 
 
     <div id="container">
-        <div id="topmenu">Angular Momentum</div>
+        <div id="topmenu" data-i18n="Angular Momentum">Angular Momentum</div>
 
         <div id="menu" style=" position: absolute;">
-            <p id="message">Car moving in a straight path with constant velocity experiences no (Linear) Momentum</p>
-            <button id="isStop">STOP</a>
-                <button id="isLinear">CIRCULAR MOTION</a></button>
+            <p id="message" data-i18n="car_moving_linear">Car moving in a straight path with constant velocity experiences no (Linear) Momentum</p>
+            <button id="isStop" data-i18n="stop">STOP</a>
+                <button id="isLinear" data-i18n="circular motion">CIRCULAR MOTION</a></button>
         </div>
     </div>
     <script src="./script/angularMomentum.js" type="module">
     </script>
+
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

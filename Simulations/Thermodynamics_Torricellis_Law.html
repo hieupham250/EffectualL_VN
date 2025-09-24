@@ -23,12 +23,12 @@
 <body>
 
     <div style="font-weight: normal;  text-decoration-line: none; padding-bottom: 2px;" id="topmenu">
-        <div>Variation of Fluid Speed with Depth</div>
+        <div data-i18n="variation">Variation of Fluid Speed with Depth</div>
 
     </div>
     <div id="sidemenu">
 
-        <strong>Pressure, P = h &rho; g + P<sub>o</sub>
+        <strong><span data-i18n="pressure">Pressure</span>, P = h &rho; g + P<sub>o</sub>
             <br>
             P<sub>o</sub> = 1 atm &
             <br>
@@ -50,10 +50,10 @@
 
 
     <div id="menu">
-        <a id="message-el"><strong>Visualise underlying physics action </strong></a><br>
+        <a id="message-el"><strong data-i18n="visualise">Visualise underlying physics action </strong></a><br>
         <table style="display:block" id="visualEL">
             <tr>
-                <td> <label for="fluidH"><strong>Fluid Height,</strong></label></td>
+                <td> <label for="fluidH"><strong data-i18n="fluid_height">Fluid Height</strong></label>,</td>
                 <td> <strong>H</strong></td>
                 <td> = </td>
                 <td style="text-align: right;"><input type="range" id="fluidH" name="fluidH" min="5" max="100"
@@ -62,7 +62,7 @@
                 <td>m</td>
             </tr>
             <tr>
-                <td> <label for="nozzleH"><strong>Nozzle Position,</strong></label></td>
+                <td> <label for="nozzleH"><strong data-i18n="nozzle_position">Nozzle Position</strong></label>,</td>
                 <td> <strong>h</strong></td>
                 <td> = </td>
                 <td style="text-align: right;"><input type="range" id="nozzleH" name="nozzleH" min="2" max="45"
@@ -71,7 +71,7 @@
                 <td>m</td>
             </tr>
             <tr>
-                <td> <label for="tankR"><strong>Tank Radius, </strong></label></td>
+                <td> <label for="tankR"><strong data-i18n="tank_radius">Tank Radius </strong></label>,</td>
                 <td> <strong>R</strong></td>
                 <td> = </td>
                 <td style="text-align: right;"><input type="range" id="tankR" name="tankR" min="5" max="25" value="10"
@@ -80,7 +80,7 @@
                 <td>m</td>
             </tr>
             <tr>
-                <td> <label for="nozzleR"><strong>Nozzle Radius,</strong></td>
+                <td> <label for="nozzleR"><strong data-i18n="nozzle_radius">Nozzle Radius</strong>,</td>
                 <td> <strong>r</strong></td>
                 <td> = </td>
                 <td style="text-align: right;"><input type="range" id="nozzleR" name="nozzleR" min="0.25" max="10"
@@ -89,7 +89,7 @@
                 <td>m</td>
             </tr>
             <tr>
-                <td> <label for="fluidV"><strong>Fluid Speed,</strong></td>
+                <td> <label for="fluidV"><strong data-i18n="fluid_speed">Fluid Speed</strong>,</td>
                 <td> <strong>v</strong></td>
                 <td> = </td>
                 <td style="text-align: center;"><strong>&Sqrt;</strong><a style="text-decoration: overline;">
@@ -98,10 +98,10 @@
                 <td>m/s</td>
             </tr>
         </table>
-        <button id="law">TORRICELLI'S LAW</button>
-        <button id="reset">RESET</button>
+        <button id="law" data-i18n="Torricellis Law">TORRICELLI'S LAW</button>
+        <button id="reset" data-i18n="reset">RESET</button>
 
-        <button onClick="pressure()">PRESSURE</button>
+        <button onClick="pressure()" data-i18n="pressure">PRESSURE</button>
     </div>
     <script>
 
@@ -311,7 +311,15 @@
             pressureGauge.position.set(25, params.posH, 0)
             scene.add(pressureGauge)
             labelGeometry = new THREE.PlaneBufferGeometry(10, 10);
-            pressureGauge.add(makeText(0, 6, .5, 32, labelMaterial, 'Pressure Gauge', "rgba(0, 0, 0, 0.8)", 'white'))
+            // pressureGauge.add(makeText(0, 6, .5, 32, labelMaterial, i18next.t("pressure_gauge"), "rgba(0, 0, 0, 0.8)", 'white'))
+            setTimeout(() => {
+                pressureGauge.add(
+                    makeText(0, 6, .5, 32, labelMaterial,
+                    i18next.t("pressure_gauge"),
+                    "rgba(0,0,0,0.8)", "white"
+                    )
+                );
+            }, 100);
             pressureLabel = makeText(0, 10, .5, 32, pressureMaterial, '0.00' + ' kPa ', "rgba(0, 0, 0, 0)", 'black')
             pressureGauge.add(pressureLabel)
 
@@ -778,6 +786,8 @@
         }
 
     </script>
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

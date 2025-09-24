@@ -24,7 +24,7 @@
 
 <body>
 
-	<div id="topmenu">MAGNETIC FIELDS DUE TO CURRENT - A 3D interactive Simulation</div>
+	<div id="topmenu" data-i18n="magnetic_fields_title">MAGNETIC FIELDS DUE TO CURRENT - A 3D interactive Simulation</div>
 	<div id="sidemenu">
 		<div style="visibility: hidden;  width: 270px;" id="rule-el">
 
@@ -34,15 +34,15 @@
 	</div>
 
 	<div id="menu">
-			<button id="wire-el">Straight Wire </button>
-			<button style="background-color: rgb(3, 67, 97) ;" id="coil-el">Coil </button>
-			<button id="solenoid-el">Solenoid </button>
-			<button id="toroid-el">Toroid </button>
-		<button id="reset-el">RESET</button>
-		<button id="flow-el">SWITCH</button>
-		<button id="flip-el">POLARITY</button>
-		<button id="formula-el">FORMULA</button><br>
-		<a id="message-el"> Magnetic Effect due to a straight Wire Carrying Current</a>
+			<button id="wire-el" data-i18n="straight_wire">Straight Wire </button>
+			<button style="background-color: rgb(3, 67, 97) ;" id="coil-el" data-i18n="coil">Coil </button>
+			<button id="solenoid-el" data-i18n="solenoid">Solenoid </button>
+			<button id="toroid-el" data-i18n="toroid">Toroid </button>
+		<button id="reset-el" data-i18n="reset">RESET</button>
+		<button id="flow-el" data-i18n="switch">SWITCH</button>
+		<button id="flip-el" data-i18n="polarity">POLARITY</button>
+		<button id="formula-el" data-i18n="formula">FORMULA</button><br>
+		<a id="message-el" data-i18n="magnetic_effect_straight"> Magnetic Effect due to a straight Wire Carrying Current</a>
 
 	</div>
 
@@ -236,7 +236,7 @@
 				}, 1000);
 				flow = 1;
 
-				message = " Magnetic Effect due to a straight Wire Carrying Current ";
+				message = i18next.t("magnetic_effect_straight");
 				messageEl.textContent = message;
 
 			} else if (flip === 1 && flow === 0 && element === 0) {
@@ -249,7 +249,7 @@
 					modelElements['MFwire'].rotation.set(0, 3.14, 0);
 				}, 1000);
 				flow = 1;
-				message = " Magnetic Effect due to a straight Wire Carrying Current";
+				message = i18next.t("magnetic_effect_straight");
 				messageEl.textContent = message;
 
 			} else if (flip === 0 && flow === 0 && element === 1) {
@@ -273,7 +273,7 @@
 
 				}, 1000);
 				flow = 1;
-				message = "Current Flows from A to B, magnetic fields created around the coil";
+				message = "Dòng điện chạy từ A đến B, tạo ra từ trường xung quanh cuộn dây";
 				messageEl.textContent = message;
 
 			} else if (flip === 1 && flow === 0 && element === 1) {
@@ -298,7 +298,7 @@
 
 				}, 1000);
 				flow = 1;
-				message = "Current Flows from B to A, magnetic fields created around the coil";
+				message = "Dòng điện chạy từ B đến A, tạo ra từ trường xung quanh cuộn dây"
 				messageEl.textContent = message;
 
 			} else if (flip === 0 && flow === 0 && element === 2) {
@@ -320,7 +320,7 @@
 					}, 1000);
 				}, 1000);
 				flow = 1;
-				message = "Current Flows from A to B through the coiled wire loops creating parallel strong magnetic field inside the solenoid and relatively weak field at external points. Shows North and South Poles";
+				message = "Dòng điện chạy từ A đến B qua các vòng dây quấn, tạo ra từ trường mạnh song song bên trong ống dây và từ trường tương đối yếu ở bên ngoài. Xuất hiện cực Bắc và cực Nam"
 				messageEl.textContent = message;
 
 			} else if (flip === 1 && flow === 0 && element === 2) {
@@ -343,7 +343,7 @@
 
 				}, 1000);
 				flow = 1;
-				message = "Current Flows from B to A through the coiled wire loops creating parallel strong magnetic field inside the solenoid and relatively weak field at external points. North and South Poles reversed";
+				message = "Dòng điện chạy từ B đến A qua các vòng dây quấn, tạo ra từ trường mạnh song song bên trong ống dây và từ trường tương đối yếu ở bên ngoài. Cực Bắc và cực Nam bị đảo ngược"
 				messageEl.textContent = message;
 
 			} else if (flip === 0 && flow === 0 && element === 3) {
@@ -360,7 +360,7 @@
 					}, 500);
 				}, 1000);
 				flow = 1;
-				message = "A toroid is a curved hollow solenoid (whose ends meets), the lines of magnetic fields form concentric circles inside the toroid. When Current Flows from A to B its in counterclockwise direction";
+				message = "Một toro là một ống dây rỗng được uốn cong (hai đầu nối lại với nhau), các đường sức từ tạo thành những vòng tròn đồng tâm bên trong toro. Khi dòng điện chạy từ A đến B thì có chiều ngược kim đồng hồ"
 				messageEl.textContent = message;
 
 			} else if (flip === 1 && flow === 0 && element === 3) {
@@ -377,7 +377,7 @@
 
 				}, 1000);
 				flow = 1;
-				message = "A toroid is a curved hollow solenoid (whose ends meets), the lines of magnetic fields form concentric circles inside the toroid. When Current Flows from B to A its in clockwise direction";
+				message = "Một toro là một ống dây rỗng được uốn cong (hai đầu nối lại với nhau), các đường sức từ tạo thành những vòng tròn đồng tâm bên trong toro. Khi dòng điện chạy từ B đến A thì có chiều cùng kim đồng hồ"
 				messageEl.textContent = message;
 
 			} else {
@@ -387,7 +387,7 @@
 				arrow.morphTargetInfluences[1] = 0;
 
 				flow = 0;
-				message = "No Current Flows, Switch OFF";
+				message = i18next.t("no_current_flows");
 				messageEl.textContent = message;
 
 			}
@@ -404,7 +404,7 @@
 
 				flow = 0;
 				flip = 1;
-				message = "Polarity Changed. B is now the + terminal";
+				message = i18next.t("polarity_changed_B");
 				messageEl.textContent = message;
 
 				animate();
@@ -417,7 +417,7 @@
 
 				flow = 0;
 				flip = 0;
-				message = "Polarity Changed. A is now the + terminal";
+				message = i18next.t("polarity_changed_A");
 				messageEl.textContent = message;
 
 				animate();
@@ -521,7 +521,7 @@
 				buttonToroidEl.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonWireEl.style.backgroundColor = "rgb(3, 108, 156)";
 				ruleEl.style.visibility = "hidden";
-				message = "Magnetic Effect due to a straight Wire Carrying Current ";
+				message = i18next.t("magnetic_effect_straight");
 				messageEl.textContent = message;
 				flip = 0;
 				flow = 0;
@@ -582,7 +582,7 @@
 				buttonToroidEl.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonFormula.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonWireEl.style.backgroundColor = "rgb(3, 67, 97)";
-				message = "Magnetic Effect due to a single Coil Carrying Current ";
+				message = i18next.t("magnetic_effect_coil")
 				messageEl.textContent = message;
 				element = 0;
 				flow = 0;
@@ -606,7 +606,7 @@
 				buttonToroidEl.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonFormula.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonCoilEl.style.backgroundColor = "rgb(3, 67, 97)";
-				message = "Magnetic Effect due to a single Coil Carrying Current ";
+				message = i18next.t("magnetic_effect_coil")
 				messageEl.textContent = message;
 				element = 1;
 				flow = 0;
@@ -628,7 +628,7 @@
 				buttonCoilEl.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonToroidEl.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonSolenoidEl.style.backgroundColor = "rgb(3, 67, 97)";
-				message = "Magnetic Effect due to a Solenoid Carrying Current ";
+				message = i18next.t("magnetic_effect_solenoid");
 				messageEl.textContent = message;
 				element = 2;
 				flow = 0;
@@ -650,7 +650,7 @@
 				buttonCoilEl.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonSolenoidEl.style.backgroundColor = "rgb(3, 108, 156)";
 				buttonToroidEl.style.backgroundColor = "rgb(3, 67, 97)";
-				message = "Magnetic Effect due to a Toroid Carrying Current ";
+				message = i18next.t("magnetic_effect_toroid")
 				messageEl.textContent = message;
 				element = 3;
 				flow = 0;
@@ -668,6 +668,9 @@
 
 
 	</script>
+
+	<script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

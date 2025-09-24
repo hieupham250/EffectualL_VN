@@ -24,7 +24,7 @@
 
 <body>
 
-    <div id="topmenu">
+    <div id="topmenu" data-i18n="Photoelectric Effect">
         The Photoelectric Effect
 
     </div>
@@ -50,18 +50,18 @@
         <a>&#10148 Max. K.E. of Electron = </a><a id="electronKE">0</a><a> eV</a><br>
         <a>&#10148 Min. K.E. of Electron = </a><a>0 eV</a><br> -->
         <a><input type="range" id="wavelength" name="wavelength" min="1" max="4.00" value="2.00" step="0.5">
-            <label for="wavelength"><strong>Wavelength</strong></label>
+            <label for="wavelength" data-i18n="wavelength"><strong>Wavelength</strong></label>
         </a>= <a id="wavevalue"></a><a> nm </a><br>
         <a><input type="range" id="intensity" name="intensity" min="0.5" max="1" value="1" step="0.25">
-            <label for="intensity"><strong>Intensity</strong></label>
+            <label for="intensity" data-i18n="intensity"><strong>Intensity</strong></label>
         </a> </a>= <a id="intensityValue"></a><a> % </a><br>
         <a><input type="range" id="voltage" name="voltage" min="-5" max="10" value="5" step="0.1">
-            <label for="voltage"><strong>Voltage </strong></label>
+            <label for="voltage" data-i18n="voltage"><strong>Voltage </strong></label>
         </a> </a>= <a id="voltageValue"></a><a> V </a><br>
-        <button id="wave">START</button>
+        <button id="wave" data-i18n="start">START</button>
 
 
-        <button style="visibility: hidden;" id="plot"> PLOT (K<sub>max</sub>)</button>
+        <button style="visibility: hidden;" id="plot"> <span data-i18n="plot">PLOT</span> (K<sub>max</sub>)</button>
 
     </div>
     <canvas style="visibility: hidden;" id="drawing-canvas" height="200" width="200"></canvas>
@@ -206,13 +206,13 @@
                 stop = !stop;
                 if (stop) {
                     drawingCanvas.style.visibility = 'hidden';
-                    waveButton.innerHTML = "START"
+                    waveButton.innerHTML = i18next.t("start");
                     stopAction()
 
                 } else {
                     drawingCanvas.style.visibility = 'visible';
                     plotButton.style.visibility = 'visible';
-                    waveButton.innerHTML = "STOP"
+                    waveButton.innerHTML = i18next.t("stop");
                     waveAction()
                     voltageAction()
                     // voltageAction(params.voltage)
@@ -945,6 +945,9 @@
         }
 
     </script>
+
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>

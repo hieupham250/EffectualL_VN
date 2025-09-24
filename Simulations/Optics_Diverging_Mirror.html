@@ -24,20 +24,20 @@
 <body>
 
     <div id="container">
-        <div id="topmenu">
+        <div id="topmenu" data-i18n="image_formation_convex">
             <div>Image Formation with Convex Mirror</div>
 
         </div>
 
         <div id="sidemenu">
             <a><input type="range" id="focal" name="focal" min="1" max="25" value="7" step="0.5">
-                <label for="focal">Focal Length =</label><a id="focalDisplay"> 7 </a>cm<br>
+                <label for="focal"><span data-i18n="focal_length">Focal Length</span> =</label><a id="focalDisplay"> 7 </a>cm<br>
             </a>
 
             <div id="items"><input type="range" id="object" name="object" min="-50" max="-0.5" value="-7" step="0.5">
-                <label for="object">Object Distance =</label><a id="objectDisplay"> -7 </a>cm<br>
+                <label for="object"><span data-i18n="object_distance">Object Distance</span> =</label><a id="objectDisplay"> -7 </a>cm<br>
                 <input type="range" id="height" name="height" min="0.5" max="5" value="3" step="0.5">
-                <label for="height">Object Height =</label><a id="heightDisplay"> 3 </a> cm<br>
+                <label for="height" data-i18n="object_height">Object Height =</label><a id="heightDisplay"> 3 </a> cm<br>
             </div>
 
 
@@ -46,7 +46,7 @@
 
         <div id="menu">
             <div style="display: none;" id="formula">
-            <a> <strong> Formula: <br>
+            <a> <strong> <span data-i18n="formula">Formula</span>: <br>
             
                 <div class="fraction">
                     <span class="fup">1</span>
@@ -73,7 +73,7 @@
                     <span class="fdn">(u-f)</span>
                 </div></strong></a>
                 <br>
-                <a><strong>Magnification:<br>
+                <a><strong><span data-i18n="magnification">Magnification:</span><br>
                 <div class="fraction">
                     m =
                 </div>
@@ -126,29 +126,29 @@
                     <table>
                         <tr>
                             <td>
-                                Focal length, (f) = <b id="f-el"> </b> cm
+                                <span data-i18n="focal_length">Focal length</span>, (f) = <b id="f-el"> </b> cm
                             </td>
                             <td>&nbsp; &nbsp;</td>
                             <td>
-                                Magnification, (m) =  <b id="m-el"></b>
+                                <span data-i18n="magnification">Magnification</span>, (m) =  <b id="m-el"></b>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Object Distance, (u) = <b id="u-el">  </b> cm
+                                <span data-i18n="object_distance">Object Distance</span>, (u) = <b id="u-el">  </b> cm
                             </td>
                             <td>&nbsp; &nbsp;</td>
                             <td>
-                                Object Height, (h<sub>o</sub>) = <b id="ho-el"> </b> cm
+                                <span data-i18n="object_height">Object Height</span>, (h<sub>o</sub>) = <b id="ho-el"> </b> cm
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Image Distance, (v) = <b style="color:red;" id="v-el">  </b> cm
+                                <span data-i18n="image_distance">Image Distance</span>, (v) = <b style="color:red;" id="v-el">  </b> cm
                             </td>
                             <td>&nbsp; &nbsp;</td>
                             <td>
-                                Image Height, h<sub>i</sub> = <b style="color:red;" id="hi-el">  </b> cm 
+                                <span data-i18n="image_height">Image Height</span>, h<sub>i</sub> = <b style="color:red;" id="hi-el">  </b> cm 
                             </td>
                         </tr>
                     </table>
@@ -157,8 +157,8 @@
                
         </div>    
             
-                <button id="change"> Object at Infinity </button>
-                <button onClick=" displayOn()">FORMULA</button>
+                <button id="change" data-i18n="Object at Infinity"> Object at Infinity </button>
+                <button onClick=" displayOn()" data-i18n="formula">FORMULA</button>
               
         </div>
     </div>
@@ -305,7 +305,7 @@
                 infinity = !infinity;
                 if (infinity) {
                     console.log('Object at infinity');
-                    changeButton.innerHTML = 'Adjust Object Distance';
+                    changeButton.innerHTML = i18next.t("Adjust Object Distance");
                     itemsMenu.style.display = 'none';
                     displayMenu.style.display = 'none';
                     pointX = new THREE.Vector3(0, (params.ho * (params.f + Math.abs(params.u))) / (params.f), params.u)
@@ -335,7 +335,7 @@
                     let newMaterial = new THREE.MeshBasicMaterial({ color: 'blue' });
                     incidentRay1.material = newMaterial;
                     console.log('Adjust Object Distance');
-                    changeButton.innerHTML = 'Object at infinity'
+                    changeButton.innerHTML = i18next.t("Object at Infinity");
                     itemsMenu.style.display = 'block'
                     displayMenu.style.display = 'block';
                     focalDisplay.innerText = params.f;
@@ -524,7 +524,9 @@
             controls.target.set(0, 2, 3);
 
             document.body.appendChild(renderer.domElement);
-            showLabels();
+            setTimeout(() => {
+                showLabels();
+            }, 200);
             inputChange()
             window.addEventListener('resize', onWindowResize);
         }
@@ -611,9 +613,9 @@
 
         function showLabels() {
             //labels
-            objLabel = addLabels('Object');
-            virtualLabel = addLabels('Virtual Image');
-            infinityLabel = addLabels('Object at infinity');
+            objLabel = addLabels(i18next.t('Object'));
+            virtualLabel = addLabels(i18next.t('Virtual Image'));
+            infinityLabel = addLabels(i18next.t('Object at infinity'));
             object.add(infinityLabel);
             objLabel.position.y = params.ho + 1;
             infinityLabel.position.y = params.hi + 1;
@@ -642,12 +644,12 @@
             cLabel.position.copy(pointC);
             scene.add(cPoint, cLabel);
 
-            opticalLabel = addLabels('Optical Axis');
+            opticalLabel = addLabels(i18next.t('Optical Axis'));
             opticalLabel.position.z = 50;
             opticalLabel.position.y = -1;
             opticalAxis.add(opticalLabel);
 
-            lensLabel = addLabels('Convex Mirror');
+            lensLabel = addLabels(i18next.t('Convex Mirror'));
             lensLabel.position.y = -params.f + 2;
             scene.add(lensLabel);
         }
@@ -817,6 +819,9 @@
 
         }
     </script>
+
+    <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
+    <script type="module" src="/i18n/index_i18n.js"></script>
 </body>
 
 </html>
