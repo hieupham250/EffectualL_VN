@@ -24,6 +24,8 @@ Nếu dùng **HTML thuần** (như `index.html`), hãy thêm i18next qua CDN:
 <script src="https://unpkg.com/i18next@23.5.0/i18next.min.js"></script>
 <!-- tạo file cấu hình i18n ví dụ-->
 <script type="module" src="/i18n/index_i18n.js"></script>
+
+Tạo các key-value cho ngôn ngữ trong file en.json và vi.json
 ```
 
 ### 🔹 React / Bundler (Vite, Webpack, Next.js...)
