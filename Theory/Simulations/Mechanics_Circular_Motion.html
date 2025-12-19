@@ -120,11 +120,11 @@
             pause = !pause
             if (pause) {
                 console.log('pause');
-                pauseButton.innerHTML = 'START';
+                pauseButton.innerHTML = i18next.t("MCM_start_button");
                 cancelAnimationFrame(requestID);
             } else {
                 console.log('Start');
-                pauseButton.innerHTML = 'PAUSE';
+                pauseButton.innerHTML = i18next.t("MCM_pause_button");
                 plotCurve();
             }
         });
@@ -140,7 +140,7 @@
             ctx.font = "20px arial";
             ctx.fillStyle = "red";
             ctx.textAlign = "center";
-            ctx.fillText("Particle in a Circular Motion", canvas.width / 2, canvas.height - 10);
+            ctx.fillText("Chuyển động tròn của hạt", canvas.width / 2, canvas.height - 10);
 
             ctx.fillStyle = "green";
             ctx.fillText("x = A coswt", (canvas.width * 2) / 3, canvas.height - 90);

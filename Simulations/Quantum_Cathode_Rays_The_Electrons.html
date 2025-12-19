@@ -144,7 +144,7 @@
             //labels
             let tubeGeometry = new THREE.CylinderGeometry(.8, .8, 1, 16);
             let elnMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
-            let electronLabel = makeText(-24, -1.5, 1.9, 32, elnMaterial, i18next.t("electron_gun"), "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
+            let electronLabel = makeText(-24, -1.5, 1.9, 32, elnMaterial, "SÚNG ELECTRON", "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
             electronButton = new THREE.Mesh(tubeGeometry, redMaterial);
             voltButton = electronButton.clone()
 
@@ -169,7 +169,7 @@
             objects.push(electronButton, gunLabel)
 
             let powerMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
-            let powerabel = makeText(-10, -12, 7, 32, powerMaterial, i18next.t("high_voltage_supply"), "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
+            let powerabel = makeText(-10, -12, 7, 32, powerMaterial, "NGUỒN CAO ÁP", "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
 
             let pulseGeometry = new THREE.PlaneGeometry(2, 2.5);
             pulseLabel = new THREE.Mesh(pulseGeometry, new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, map: voltTexture, transparent: true }));
@@ -178,7 +178,7 @@
             pulseLabel.visible = false
 
             let voltMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
-            let plateLabel = makeText(-5, 7, 2, 32, voltMaterial, i18next.t("voltage_plates"), "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
+            let plateLabel = makeText(-5, 7, 2, 32, voltMaterial, "BÀN ĐIỆN ÁP", "rgba(0, 0, 0, 0.1)", "rgba(0, 255, 255, 1)");
             topMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });
             let posLabel = makeText(-1, 6, 0, 92, topMaterial, '   ', "rgba(0, 0, 0, 0)", "rgba(0, 255, 255, 1)");
             bottomMaterial = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, transparent: true });

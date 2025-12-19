@@ -18,8 +18,12 @@ async function loadLocales() {
     },
     () => {
       updateContent();
-      if (window.MathJax) {
+      if (window.MathJax && MathJax.typesetPromise) {
         MathJax.typesetPromise();
+      } else {
+        document.addEventListener("mathjax-ready", () => {
+          MathJax.typesetPromise();
+        });
       }
       if (typeof populateSimulationList === "function") {
         populateSimulationList(simulationData[grade]);

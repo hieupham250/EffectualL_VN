@@ -200,14 +200,14 @@
               arrowDown.rotation.z = X;
               arrowUp.position.y = animations.slit;
               arrowUp.rotation.z = -X;
-              menuEl.innerHTML = "Light as Waves, &lambda; &#8909; d";
+              menuEl.innerHTML = i18next.t("light_as_waves");
             } else {
               center1 = new THREE.Vector3(-150, 0, 0);
               arrowDown.position.y = -animations.slit / 2;
               arrowUp.position.y = animations.slit / 2;
               arrowDown.rotation.z = 0;
               arrowUp.rotation.z = 0;
-              menuEl.innerHTML = "Light as Rays, &lambda; &#8810; d";
+              menuEl.innerHTML = i18next.t("light_as_rays");
             }
             // console.log('slit move', 1 / (2 * animations.slit), arrowUp.rotation.z, arrowDown.rotation.z)
           });

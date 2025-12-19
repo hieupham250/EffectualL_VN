@@ -1,46 +1,46 @@
 {
-	"Eyepiece": [
-		"Eyepiece (ocular lens)",
-		"It's a cylinder containing two or more lenses; its function is to bring the image into focus for the eye. "	
-	],
+  "Eyepiece": [
+    "Thị kính (ống kính mắt)",
+    "Là một ống hình trụ chứa hai hoặc nhiều thấu kính; chức năng của nó là đưa hình ảnh vào đúng tiêu cự cho mắt quan sát."
+  ],
 
-	"Coarse_knob": [
-		"Coarse Knob",
-		"Adjustment knobs move the stage up and down with separate adjustment for coarse and fine focusing. The same controls enable the microscope to adjust to specimens of different thickness. "
-	],
+  "Coarse_knob": [
+    "Núm chỉnh thô",
+    "Các núm điều chỉnh giúp di chuyển bàn kính lên và xuống với cơ chế chỉnh thô và chỉnh tinh riêng biệt. Các núm này cũng cho phép kính hiển vi điều chỉnh phù hợp với các mẫu vật có độ dày khác nhau."
+  ],
 
-	"Objective_lens": [
-		"Objective Lens",
-		"The set of objective lenses are part of the Objective turret, revolver, or revolving nose piece. Microscope objectives are characterized by two parameters, namely, magnification and numerical aperture. The former typically ranges from 5× to 100× while the latter ranges from 0.14 to 0.7, corresponding to focal lengths of about 40 to 2 mm, respectively."
-	],
+  "Objective_lens": [
+    "Vật kính",
+    "Hệ thống vật kính là một phần của mâm xoay vật kính (đầu quay). Vật kính của kính hiển vi được đặc trưng bởi hai thông số chính là độ phóng đại và khẩu độ số. Độ phóng đại thường dao động từ 5× đến 100×, trong khi khẩu độ số từ 0,14 đến 0,7, tương ứng với tiêu cự khoảng từ 40 đến 2 mm."
+  ],
 
-	"Light_source": [
-		"Light Source",
-		"Many sources of light can be used. At its simplest, daylight is directed via a mirror. Most microscopes, however, have their own adjustable and controllable light source."
-	],
+  "Light_source": [
+    "Nguồn sáng",
+    "Có thể sử dụng nhiều nguồn sáng khác nhau. Ở dạng đơn giản nhất, ánh sáng tự nhiên được dẫn qua gương phản chiếu. Tuy nhiên, hầu hết các kính hiển vi đều có nguồn sáng riêng có thể điều chỉnh và kiểm soát được."
+  ],
 
-	"Focus_stop": [
-		"Focus Stop",
-		"Focus stop for the objective lenses movement."
-	],
+  "Focus_stop": [
+    "Chốt giới hạn lấy nét",
+    "Chốt giới hạn dùng để kiểm soát phạm vi di chuyển của vật kính khi lấy nét."
+  ],
 
-	"Condenser": [
-		"Condenser",
-		"The condenser is a lens designed to focus light from the illumination source onto the sample. The condenser may also include other features, such as a diaphragm and/or filters, to manage the quality and intensity of the illumination."
-	],
+  "Condenser": [
+    "Tụ quang",
+    "Tụ quang là một thấu kính được thiết kế để hội tụ ánh sáng từ nguồn chiếu sáng lên mẫu vật. Tụ quang cũng có thể bao gồm các bộ phận khác như khẩu độ (diaphragm) và/hoặc kính lọc để kiểm soát chất lượng và cường độ ánh sáng."
+  ],
 
-	"Sample_stage": [
-		"Sample Stage",
-		"The stage is a platform below the objective lens which supports the specimen being viewed. In the center of the stage is a hole through which light passes to illuminate the specimen. The stage usually has arms to hold slides."
-	],
+  "Sample_stage": [
+    "Bàn đặt mẫu",
+    "Bàn kính là một bệ nằm bên dưới vật kính, dùng để giữ mẫu vật quan sát. Ở giữa bàn kính có một lỗ để ánh sáng đi qua chiếu sáng mẫu vật. Bàn kính thường có các kẹp để giữ tiêu bản."
+  ],
 
-	"Fine_knob": [
-		"Fine Knob",
-		"Adjustment knobs move the stage up and down with separate adjustment for coarse and fine focusing. The same controls enable the microscope to adjust to specimens of different thickness."
-	],
-	
-	"Frame": [
-		"Frame",
-		"The whole of the optical assembly is traditionally attached to a rigid arm, which in turn is attached to a robust U-shaped foot to provide the necessary rigidity. The arm angle may be adjustable to allow the viewing angle to be adjusted. The frame provides a mounting point for various microscope controls. "
-	]
+  "Fine_knob": [
+    "Núm chỉnh tinh",
+    "Các núm điều chỉnh giúp di chuyển bàn kính lên và xuống với cơ chế chỉnh thô và chỉnh tinh riêng biệt. Các núm này cho phép điều chỉnh tiêu cự chính xác khi quan sát."
+  ],
+
+  "Frame": [
+    "Khung kính",
+    "Toàn bộ hệ thống quang học thường được gắn vào một tay đỡ cứng, tay đỡ này lại được gắn vào một đế hình chữ U chắc chắn để đảm bảo độ ổn định. Góc của tay đỡ có thể điều chỉnh để thay đổi góc quan sát. Khung kính cũng là nơi gắn các bộ phận điều khiển của kính hiển vi."
+  ]
 }

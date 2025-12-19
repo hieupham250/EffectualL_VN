@@ -137,10 +137,10 @@
 
         if (!stop) {
           periodicProjection();
-          stopButton.innerHTML = "STOP";
+          stopButton.innerHTML = i18next.t("stop");
         } else {
           cancelAnimationFrame(requestID);
-          stopButton.innerHTML = "START";
+          stopButton.innerHTML = i18next.t("start");
         }
       });
       resetButton.addEventListener("click", reset);
